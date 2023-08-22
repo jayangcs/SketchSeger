@@ -1,0 +1,22 @@
+[
+    'airplane', 'angel', 'ant', 'apple', 'backpack',
+    'banana', 'baseball bat', 'basket', 'bear', 'bed',
+    'bench', 'bicycle', 'bird', 'book', 'bread',
+    'bridge', 'broccoli', 'bus', 'bush', 'butterfly',
+    'cake', 'car', 'carrot', 'castle', 'cat',
+    'cell phone', 'chair', 'church', 'clock', 'cloud',
+    'couch', 'cow', 'cup', 'dog', 'donut',
+    'duck', 'elephant', 'fence', 'fire hydrant', 'fish',
+    'flower', 'flying saucer', 'fork', 'frog', 'giraffe',
+    'grass', 'helicopter', 'horse', 'hospital', 'hot dog',
+    'house', 'kangaroo', 'keyboard', 'knife', 'laptop',
+    'leaf', 'light bulb', 'lightning', 'lion', 'mailbox',
+    'microwave', 'moon', 'motorbike', 'mountain', 'oven',
+    'palm tree', 'pig', 'pizza', 'rabbit', 'rainbow',
+    'remote control', 'sandwich', 'scissors', 'sheep', 'sink',
+    'skyscraper', 'snake', 'spoon', 'star', 'stop sign',
+    'streetlight', 'suitcase', 'sun', 'table', 'teddy-bear',
+    'television', 'tennis racquet', 'toaster', 'toilet', 'toothbrush',
+    'traffic light', 'train', 'tree', 'truck', 'umbrella',
+    'vase', 'windmill', 'wine bottle', 'wine glass', 'zebra'
+]
