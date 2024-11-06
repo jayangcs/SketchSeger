@@ -16,8 +16,73 @@ Mosaic-Quickdraw is a scene sketch semantic segmentation dataset that is synthes
 * categories: [100 different categories](class_list.txt)
 * training/validation/testing split: 8,000/1,000/1,000
 
-These datasets can be downloaded from [Hugging Face](https://huggingface.co/datasets/jayangcs/Mosaic-Quickdraw).
+These datasets can be downloaded from [Hugging Face Dataset Repository](https://huggingface.co/datasets/jayangcs/Mosaic-Quickdraw).
 
 ## Code
 
-The code will be released in the near future.
+### Development Environment
+
+Our code is implemented using the [mmsegmentation](https://github.com/open-mmlab/mmsegmentation) codebase, and some of the key development environments and package versions are listed below:
+
+* OS: Ubuntu 22.04
+* CUDA: 11.3
+* Python: 3.9.15
+* PyTorch: 1.11.0
+* mmengine: 0.3.2
+* mmcv: 2.0.0rc3
+* mmcls: 1.0.0rc3
+* mmsegmentation: 1.0.0rc1
+
+You can use the following commands to install the development environment:
+
+```
+pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --extra-index-url https://download.pytorch.org/whl/cu113
+pip install -r requirements.txt
+mim install mmcv==2.0.0rc3
+```
+
+### Checkpoint
+
+The pre-trained checkpoint file for the SketchSeger model can be downloaded from [Hugging Face Model Repository](https://huggingface.co/jayangcs/SketchSeger), and then you need to put it in the `$ROOT_PATH/Checkpoints` directory.
+
+### Dataset
+
+The benchmark datasets need to be placed in the `$ROOT_PATH/Datasets` directory. Note: In order to adapt to the file naming requirements of dataloader, you need to change the names of all files in the `DRAWING_GT` directory of the benchmark datasets from `L0_sample[id].png` to `sample_[id]_drawing.png`. For example, file `L0_sample1.png` needs to be renamed to `sample_1_drawing.png`.
+
+### Training
+
+**Training on single GPU:**
+
+```
+python mmsegmentation/tools/train.py [path-to-config-file]
+```
+
+Example:
+
+```
+python mmsegmentation/tools/train.py mmsegmentation/custom_configs/sketchseger/sketchseger_sketchyscene.py
+```
+
+**Training on multiple GPUs:**
+
+```
+bash mmsegmentation/tools/dist_train.sh [path-to-config-file] [gpu-num]
+```
+
+Example:
+
+```
+bash mmsegmentation/tools/dist_train.sh mmsegmentation/custom_configs/sketchseger/sketchseger_sketchyscene.py 4
+```
+
+### Testing
+
+```
+python mmsegmentation/tools/test.py [path-to-config-file] --checkpoint [path-to-checkpoint] --work-dir [path-to-work-dir]
+```
+
+Example:
+
+```
+python mmsegmentation/tools/test.py mmsegmentation/custom_configs/sketchseger/sketchseger_sketchyscene.py --checkpoint Checkpoints/sketchseger_sketchyscene_latest.pth --work-dir outputs/sketchseger_sketchyscene_test
+```
