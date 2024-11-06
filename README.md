@@ -45,7 +45,10 @@ mim install mmcv==2.0.0rc3
 
 The pre-trained checkpoint file for the SketchSeger model can be downloaded from [Hugging Face Model Repository](https://huggingface.co/jayangcs/SketchSeger), and then you need to put it in the `$ROOT_PATH/Checkpoints` directory.
 
-### Dataset
+### Benchmark Datasets
+
+* SketchyScene: [Link](https://github.com/SketchyScene/SketchyScene)
+* SKY-Scene & TUB-Scene: [Link](https://github.com/drcege/Local-Detail-Perception)
 
 The benchmark datasets need to be placed in the `$ROOT_PATH/Datasets` directory. Note: In order to adapt to the file naming requirements of dataloader, you need to change the names of all files in the `DRAWING_GT` directory of the benchmark datasets from `L0_sample[id].png` to `sample_[id]_drawing.png`. For example, file `L0_sample1.png` needs to be renamed to `sample_1_drawing.png`.
 
@@ -85,4 +88,20 @@ Example:
 
 ```
 python mmsegmentation/tools/test.py mmsegmentation/custom_configs/sketchseger/sketchseger_sketchyscene.py --checkpoint Checkpoints/sketchseger_sketchyscene_latest.pth --work-dir outputs/sketchseger_sketchyscene_test
+```
+
+## Citation
+
+If you find our dataset or code useful for your research, please consider citing this paper.
+
+```
+@article{yang2023scene,
+  title={Scene sketch semantic segmentation with hierarchical Transformer},
+  author={Yang, Jie and Ke, Aihua and Yu, Yaoxiang and Cai, Bo},
+  journal={Knowledge-Based Systems},
+  volume={280},
+  pages={110962},
+  year={2023},
+  publisher={Elsevier}
+}
 ```
