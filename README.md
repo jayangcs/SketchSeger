@@ -90,6 +90,12 @@ Example:
 python mmsegmentation/tools/test.py mmsegmentation/custom_configs/sketchseger/sketchseger_sketchyscene.py --checkpoint Checkpoints/sketchseger_sketchyscene_latest.pth --work-dir outputs/sketchseger_sketchyscene_test
 ```
 
+### Inference
+
+```
+python mmsegmentation/custom_tools/custom_inference.py
+```
+
 ## Citation
 
 If you find our dataset or code useful for your research, please consider citing this paper.
